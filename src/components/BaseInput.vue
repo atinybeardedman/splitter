@@ -1,5 +1,15 @@
 <template>
-    <input :id="id" :type="type" :value="modelValue" @input="updateInput"/>
+    <input
+        w="full"
+        bg="gray-cyan-100"
+        text="right dark-cyan"
+        py="1"
+        :id="id"
+        :placeholder="placeholder"
+        :type="type"
+        :value="modelValue"
+        @input="updateInput"
+    />
 </template>
 
 <script lang="ts">
@@ -15,8 +25,12 @@ export default defineComponent({
             type: String,
             default: 'text'
         },
-        modelValue: {
+        placeholder: {
             type: String,
+            default: ''
+        },
+        modelValue: {
+            type: [String, Number],
             default: ''
         }
     },

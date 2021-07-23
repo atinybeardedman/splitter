@@ -1,8 +1,14 @@
 <template>
-  <main>
-    <section>
-      <tip-form></tip-form>
-      <result-display></result-display>
+  <main h="100vh" display="flex" bg="gray-cyan-200">
+    <section m="sm:y-auto sm:x-auto y-0" w="30rem">
+      <h1 font="700 tracking-0.75rem" py="2rem" text="center uppercase dark-cyan" class="title">
+        Spli<br>
+        tter
+      </h1>
+      <div bg="white" border="~ rounded-2xl white" px="2rem" py="2">
+        <tip-form m="y-1rem"></tip-form>
+        <result-display m="y-1rem"></result-display>
+      </div>
     </section>
   </main>
 </template>
@@ -22,4 +28,8 @@ export default defineComponent({
 </script>
 
 <style>
+body {
+  font-size: 24px;
+  /* font-family: 'Space Mono', monospace; */
+}
 </style>
