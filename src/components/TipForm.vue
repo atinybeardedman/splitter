@@ -1,8 +1,8 @@
 <template>
     <section>
-        <form-field></form-field>
-        <tip-choices></tip-choices>
-        <form-field></form-field>
+        <form-field py="2" type="number" id="bill" label="Bill"></form-field>
+        <tip-choices py="2"></tip-choices>
+        <form-field py="2" type="number" id="num-people" label="Number of People"></form-field>
     </section>
 </template>
 

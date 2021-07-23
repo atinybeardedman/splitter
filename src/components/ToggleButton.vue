@@ -1,5 +1,16 @@
 <template>
-    <base-button :class="{active: isToggled}" >
+    <base-button
+        font="700"
+        border="~ 0px rounded"
+        outline="none active:none"
+        my="1.5"
+        py="1"
+        w="9rem"
+        transition="colors"
+        hover="bg-gray-cyan-200 text-dark-cyan"
+        :text="isToggled ? 'dark-cyan' : 'white'"
+        :bg="isToggled ? 'primary hover:gray-cyan-200' : 'dark-cyan'"
+    >
         <slot></slot>
     </base-button>
 </template>
@@ -18,9 +29,9 @@ export default defineComponent({
         }
     },
     setup: (props) => {
-        const {selectedValue, value } = toRefs(props);
+        const { selectedValue, value } = toRefs(props);
         const isToggled = computed(() => selectedValue.value === value.value);
-        
+
         return {
             isToggled,
         }
@@ -28,6 +39,6 @@ export default defineComponent({
     components: {
         BaseButton
     }
-    
+
 });
 </script>

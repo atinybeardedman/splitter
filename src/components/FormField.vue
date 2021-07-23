@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="header">
-            <label for=""></label>
+            <label :for="id" text="sm dark-cyan">{{label}}</label>
             <div class="error"></div>
         </div>
         <div class="input-wrapper">
-            <base-icon></base-icon>
-            <base-input></base-input>
+            <base-icon>{{icon}}</base-icon>
+            <base-input :id="id" :type="type" p="y-2 x-4" font="700"></base-input>
         </div>
 
     </div>
@@ -21,6 +21,24 @@ export default defineComponent({
     components: {
         BaseInput,
         BaseIcon
+    },
+    props: {
+        id: {
+            type: String,
+            default: ''
+        },
+        label: {
+            type: String,
+            default: ''
+        },
+        type: {
+            type: String,
+            default: ''
+        },
+        icon: {
+            type: String,
+            default: ''
+        }
     }
 });
 </script>
