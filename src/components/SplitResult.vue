@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, watchEffect } from 'vue';
 import  useCurrency  from '../composition/useCurrency';
 export default defineComponent({
     name: 'SplitResult',
@@ -25,7 +25,7 @@ export default defineComponent({
             default: 0
         }
     },
-    setup: () => {
+    setup: (props) => {
         const {currencyPipe} = useCurrency();
         return {
            currencyPipe

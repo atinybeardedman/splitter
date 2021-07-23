@@ -6,8 +6,8 @@
         tter
       </h1>
       <div bg="white" border="~ rounded-2xl white" px="2rem" py="2">
-        <tip-form></tip-form>
-        <result-display></result-display>
+        <tip-form m="y-1rem"></tip-form>
+        <result-display m="y-1rem"></result-display>
       </div>
     </section>
   </main>

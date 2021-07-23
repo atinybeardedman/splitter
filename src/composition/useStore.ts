@@ -1,9 +1,9 @@
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 
+const selectedPercent = ref(15);
+const totalBill = ref(0);
+const numSplit = ref(1);
 export default function useStore(){
-    const selectedPercent = ref(15);
-    const totalBill = ref(0);
-    const numSplit = ref(1);
     return {
         selectedPercent,
         totalBill,

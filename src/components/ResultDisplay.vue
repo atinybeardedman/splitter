@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, watchEffect, toRefs } from 'vue';
 import SplitResult from './SplitResult.vue';
 import BaseButton from './BaseButton.vue';
 import useStore from '../composition/useStore';
@@ -30,8 +30,11 @@ export default defineComponent({
     },
     setup: () => {
         const { selectedPercent, totalBill, numSplit } = useStore();
-        const tipSplit = computed(() => (totalBill.value * (selectedPercent.value / 100) / numSplit.value) );
-        const totalSplit = computed(() => (totalBill.value * (1 + selectedPercent.value / 100) / numSplit.value));
+        console.log(selectedPercent.value)
+        const tipSplit = computed(() => {
+            return (totalBill.value * (selectedPercent.value / 100) / numSplit.value)
+        } );
+        const totalSplit = computed(() => (totalBill.value * (1 + selectedPercent.value / 100)) / numSplit.value);
         return {
             tipSplit,
             totalSplit
