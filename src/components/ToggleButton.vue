@@ -7,9 +7,9 @@
         py="1"
         w="9rem"
         transition="colors"
-        hover="bg-gray-cyan-200 text-dark-cyan"
+        sm="hover:bg-gray-cyan-200 hover:text-dark-cyan"
         :text="isToggled ? 'dark-cyan' : 'white'"
-        :bg="isToggled ? 'primary hover:gray-cyan-200' : 'dark-cyan'"
+        :bg="isToggled ? 'primary' : 'dark-cyan'"
     >
         <slot></slot>
     </base-button>

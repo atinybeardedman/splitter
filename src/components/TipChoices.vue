@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, Ref, ref, watchEffect } from 'vue';
+import { defineComponent, PropType, Ref, ref, watchEffect } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import BaseInput from './BaseInput.vue';
 import useStore from '../composition/useStore';

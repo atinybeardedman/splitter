@@ -3,6 +3,7 @@
         <split-result :result="tipSplit">Tip Amount</split-result>
         <split-result :result="totalSplit">Total</split-result>
         <base-button
+            @click="resetStore"
             font="700"
             border="~ 0px rounded"
             outline="none active:none"
@@ -10,7 +11,7 @@
             py="3"
             w="full"
             transition="colors"
-            hover="bg-gray-cyan-200 text-dark-cyan"
+            sm="hover:bg-gray-cyan-200 hover:text-dark-cyan"
             text="20px dark-cyan center uppercase"
             bg="primary hover:gray-cyan-200"
         >Reset</base-button>
@@ -30,14 +31,19 @@ export default defineComponent({
     },
     setup: () => {
         const { selectedPercent, totalBill, numSplit } = useStore();
-        console.log(selectedPercent.value)
         const tipSplit = computed(() => {
             return (totalBill.value * (selectedPercent.value / 100) / numSplit.value)
         } );
         const totalSplit = computed(() => (totalBill.value * (1 + selectedPercent.value / 100)) / numSplit.value);
+        const resetStore = () => {
+            totalBill.value = 0;
+            numSplit.value = 1;
+            selectedPercent.value = 15;
+        }
         return {
             tipSplit,
-            totalSplit
+            totalSplit,
+            resetStore
         }
     }
 });

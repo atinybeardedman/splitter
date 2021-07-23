@@ -1,11 +1,11 @@
 <template>
     <section>
         <form-field id="bill" label="Bill" p="y-1rem">
-            <base-input v-model="billInput" type="number" id="bill" p="y-2 x-4" font="700"></base-input>
+            <base-input v-model.number="totalBill" type="number" id="bill" p="y-2 x-4" font="700"></base-input>
         </form-field>
         <tip-choices py="1rem"></tip-choices>
         <form-field p="y-1rem" id="num-split" label="Number of People">
-            <base-input v-model="splitInput" type="number" id="num-split" p="y-2 x-4" font="700"></base-input>
+            <base-input v-model.number="numSplit" type="number" id="num-split" p="y-2 x-4" font="700"></base-input>
         </form-field>
     </section>
 </template>
@@ -24,17 +24,11 @@ export default defineComponent({
         TipChoices
     },
     setup: () => {
-        const billInput = ref(0);
-        const splitInput = ref(1);
         const { totalBill, numSplit } = useStore();
-        watchEffect(() => {
-            numSplit.value = splitInput.value;
-            totalBill.value = billInput.value;
-        });
 
         return {
-            billInput,
-            splitInput
+            totalBill,
+            numSplit
         }
     }
 });
