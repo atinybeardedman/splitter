@@ -11,9 +11,9 @@
             py="3"
             w="full"
             transition="colors"
-            sm="hover:bg-gray-cyan-200 hover:text-dark-cyan"
+            sm="hover:bg-accent hover:text-dark-cyan"
             text="20px dark-cyan center uppercase"
-            bg="primary hover:gray-cyan-200"
+            bg="primary"
         >Reset</base-button>
     </div>
 </template>

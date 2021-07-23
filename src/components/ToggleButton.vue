@@ -7,7 +7,7 @@
         py="1"
         w="9rem"
         transition="colors"
-        sm="hover:bg-gray-cyan-200 hover:text-dark-cyan"
+        sm="hover:bg-accent hover:text-dark-cyan"
         :text="isToggled ? 'dark-cyan' : 'white'"
         :bg="isToggled ? 'primary' : 'dark-cyan'"
     >
