@@ -1,12 +1,28 @@
-import { ref, watchEffect } from "vue";
+import { computed, Ref, ref, watchEffect } from "vue";
 
-const selectedPercent = ref(15);
-const totalBill = ref(0);
-const numSplit = ref(1);
+const selectedPercent: Ref<number | undefined> = ref();
+const totalBill: Ref<number | undefined> = ref();
+const numSplit:  Ref<number | undefined> = ref();
+const hasError = computed(() => {
+    if(!(selectedPercent.value && numSplit.value && totalBill.value) ){
+        return true;
+    }
+    else if(selectedPercent.value < 0){
+        return true;
+    }
+    if(totalBill.value < 0){
+        return true;
+    }
+    if(numSplit.value <= 0){
+        return true
+    }
+    return false;
+})
 export default function useStore(){
     return {
         selectedPercent,
         totalBill,
-        numSplit
+        numSplit,
+        hasError
     }
 }

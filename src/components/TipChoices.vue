@@ -15,7 +15,7 @@
                 placeholder="Custom"
                 font="700"
                 text="placeholder-gray-cyan-500 right"
-                px="1rem"
+                p="x-1"
                 b="~ rounded"
                 type="number"
                 id="custom"

@@ -5,9 +5,9 @@
         Spli
         <br />tter
       </h1>
-      <div sm="flex flex-row" bg="white" border="~ rounded-2xl white" px="2rem" py="2">
-        <tip-form m="1rem" min-w="md:375px" w="md:50% full"></tip-form>
-        <result-display m="md:1rem" min-w="md:375px" w="md:50% full"></result-display>
+      <div md="flex flex-row justify-evenly" bg="white" border="~ rounded-2xl white" p="1rem">
+        <tip-form m="md:1rem" min-w="md:375px" w="md:45/100 full"></tip-form>
+        <result-display m="md:1rem" min-w="md:375px" w="md:45/100 full"></result-display>
       </div>
     </section>
   </main>
