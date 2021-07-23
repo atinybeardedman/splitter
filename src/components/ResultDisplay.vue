@@ -1,7 +1,9 @@
 <template>
-    <div bg="dark-cyan" flex="column" align="center" text="white" border="~ rounded-2xl" p="x-1.5rem y-1.5rem">
-        <split-result :result="tipSplit">Tip Amount</split-result>
-        <split-result :result="totalSplit">Total</split-result>
+    <div bg="dark-cyan" flex="~ col" align="items-stretch" justify="md:between" text="white" border="~ rounded-2xl" p="1.5rem md:3rem">
+        <div>
+            <split-result :result="tipSplit">Tip Amount</split-result>
+            <split-result :result="totalSplit">Total</split-result>
+        </div>
         <base-button
             @click="resetStore"
             font="700"
