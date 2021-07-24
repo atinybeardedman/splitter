@@ -1,7 +1,7 @@
 <template>
   <main h="100vh" display="flex" bg="gray-cyan-200">
     <section m="lg:y-auto lg:x-auto y-0" max-w="lg:925px">
-      <h1 font="700 tracking-0.75rem" p="y-2rem lg:b-4rem" text="center uppercase dark-cyan" class="title">
+      <h1 font="700 tracking-0.75rem" p="y-2rem lg:b-4rem" text="center uppercase gray-cyan-500" class="title">
         Spli
         <br />tter
       </h1>
