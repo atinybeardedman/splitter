@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, Ref, ref, watchEffect } from 'vue';
+import { defineComponent, PropType, Ref, ref, watchEffect, watch } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import BaseInput from './BaseInput.vue';
 import FormField from './FormField.vue';
@@ -44,15 +44,25 @@ export default defineComponent({
             default: [5, 10, 15, 25, 50]
         }
     },
-    setup() {
+    setup(props) {
         const { selectedPercent } = useStore();
         const customTip: Ref<number | undefined> = ref();
-        watchEffect(() => {
-            if (typeof customTip.value === 'number') {
-                console.log(customTip.value);
-                selectedPercent.value = customTip.value;
-            }
-        })
+            watch(selectedPercent, (percent, prevPercent) => {
+                if(!percent){
+                    if(prevPercent){
+                        customTip.value = undefined;
+                    }
+                } else if(props.choices.includes(percent)){
+                    customTip.value = undefined;
+                } else if(percent !== prevPercent){
+                    customTip.value = percent;
+                }
+            });
+            watchEffect(() => {
+                if(typeof customTip.value === 'number'){
+                    selectedPercent.value = customTip.value;
+                }
+            })
         return {
             selectedPercent,
             customTip
