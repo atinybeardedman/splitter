@@ -1,7 +1,7 @@
 <template>
     <div>
         <div font="700" text="16px dark-cyan" p="b-1rem">Select Tip %</div>
-        <div flex="~ row wrap" justify="between">
+        <div flex="~ row wrap" justify="evenly">
             <toggle-button
                 v-for="(choice,index) in choices"
                 :key="index"
@@ -10,17 +10,17 @@
                 :selected-value="selectedPercent"
                 @click="selectedPercent = choice"
             >{{ choice }}%</toggle-button>
-            <base-input
-                v-model.number="customTip"
-                placeholder="Custom"
-                font="700"
-                text="placeholder-gray-cyan-500 right"
-                p="x-1"
-                b="~ rounded"
-                type="number"
-                id="custom"
-                w="md:7.5rem 9rem"
-            ></base-input>
+            <form-field w="md:7.5rem 8.5rem"  py="1.5">
+                <base-input
+                    v-model.number="customTip"
+                    placeholder="Custom"
+                    font="700"
+                    text="placeholder-gray-cyan-500 right"
+                    p="x-1"
+                    type="number"
+                    id="custom"
+                ></base-input>
+            </form-field>
         </div>
     </div>
 </template>
@@ -29,12 +29,14 @@
 import { defineComponent, PropType, Ref, ref, watchEffect } from 'vue';
 import ToggleButton from './ToggleButton.vue';
 import BaseInput from './BaseInput.vue';
+import FormField from './FormField.vue';
 import useStore from '../composition/useStore';
 export default defineComponent({
     name: 'TipChoices',
     components: {
         ToggleButton,
-        BaseInput
+        BaseInput,
+        FormField
     },
     props: {
         choices: {

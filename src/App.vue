@@ -1,13 +1,13 @@
 <template>
   <main h="100vh" display="flex" bg="gray-cyan-200">
-    <section m="md:y-auto md:x-auto y-0" max-w="md:925px">
-      <h1 font="700 tracking-0.75rem" p="y-2rem md:b-4rem" text="center uppercase dark-cyan" class="title">
+    <section m="lg:y-auto lg:x-auto y-0" max-w="lg:925px">
+      <h1 font="700 tracking-0.75rem" p="y-2rem lg:b-4rem" text="center uppercase dark-cyan" class="title">
         Spli
         <br />tter
       </h1>
-      <div md="flex flex-row justify-evenly" bg="white" border="~ rounded-2xl white" p="1rem">
-        <tip-form m="md:1rem" min-w="md:375px" w="md:45/100 full"></tip-form>
-        <result-display m="md:1rem" min-w="md:375px" w="md:45/100 full"></result-display>
+      <div lg="flex flex-row justify-evenly" bg="white" border="~ rounded-2xl white" p="md:1rem 2rem">
+        <tip-form m="lg:1rem" min-w="lg:375px" w="lg:45/100 full"></tip-form>
+        <result-display m="lg:1rem" min-w="lg:375px" w="lg:45/100 full"></result-display>
       </div>
     </section>
   </main>
