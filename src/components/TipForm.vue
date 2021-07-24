@@ -1,11 +1,11 @@
 <template>
     <section>
-        <form-field id="bill" label="Bill" p="y-1rem">
-            <base-input v-model.number="totalBill" type="number" id="bill" p="y-2 x-4" font="700"></base-input>
+        <form-field id="bill" label="Bill" p="y-1rem" icon="dollar">
+            <base-input v-model.number="totalBill" placeholder="0" type="number" id="bill" p="y-2 x-4" font="700"></base-input>
         </form-field>
         <tip-choices py="1rem"></tip-choices>
-        <form-field p="y-1rem" id="num-split" label="Number of People">
-            <base-input v-model.number="numSplit" type="number" id="num-split" p="y-2 x-4" font="700"></base-input>
+        <form-field p="y-1rem" id="num-split" label="Number of People" icon="person">
+            <base-input v-model.number="numSplit" placeholder="1" type="number" id="num-split" p="y-2 x-4" font="700"></base-input>
         </form-field>
     </section>
 </template>

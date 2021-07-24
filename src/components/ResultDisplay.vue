@@ -1,9 +1,12 @@
 <template>
-    <div bg="dark-cyan" flex="column" align="center" text="white" border="~ rounded-2xl" p="x-1.5rem y-1.5rem">
-        <split-result :result="tipSplit">Tip Amount</split-result>
-        <split-result :result="totalSplit">Total</split-result>
+    <div bg="dark-cyan" flex="~ col" align="items-stretch" justify="md:between" text="white" border="~ rounded-2xl" p="1.5rem md:3rem">
+        <div>
+            <split-result :result="tipSplit">Tip Amount</split-result>
+            <split-result :result="totalSplit">Total</split-result>
+        </div>
         <base-button
-            @click="resetStore"
+            :disabled="hasError"
+            @click.prevent="resetStore"
             font="700"
             border="~ 0px rounded"
             outline="none active:none"
@@ -11,9 +14,10 @@
             py="3"
             w="full"
             transition="colors"
-            sm="hover:bg-accent hover:text-dark-cyan"
+            md="hover:bg-accent disabled:bg-primary"
             text="20px dark-cyan center uppercase"
             bg="primary"
+            :opacity="hasError ? '50': '100'"
         >Reset</base-button>
     </div>
 </template>
@@ -30,19 +34,24 @@ export default defineComponent({
         BaseButton
     },
     setup: () => {
-        const { selectedPercent, totalBill, numSplit } = useStore();
-        const tipSplit = computed(() => {
-            return (totalBill.value * (selectedPercent.value / 100) / numSplit.value)
-        } );
-        const totalSplit = computed(() => (totalBill.value * (1 + selectedPercent.value / 100)) / numSplit.value);
+        const { selectedPercent, totalBill, numSplit, hasError } = useStore();
+        const tipSplit = computed(() => 
+        //@ts-ignore
+            hasError.value ? 0 : (totalBill.value * (selectedPercent.value / 100) / numSplit.value)
+         );
+         //@ts-ignore
+        const totalSplit = computed(() => hasError.value ? 0 : (totalBill.value * (1 + selectedPercent.value / 100)) / numSplit.value);
         const resetStore = () => {
-            totalBill.value = 0;
-            numSplit.value = 1;
-            selectedPercent.value = 15;
+            if(!hasError.value){
+                totalBill.value = undefined;
+                numSplit.value = undefined;
+                selectedPercent.value = undefined;
+            }
         }
         return {
             tipSplit,
             totalSplit,
+            hasError,
             resetStore
         }
     }
