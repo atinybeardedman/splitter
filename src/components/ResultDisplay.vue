@@ -36,8 +36,10 @@ export default defineComponent({
     setup: () => {
         const { selectedPercent, totalBill, numSplit, hasError } = useStore();
         const tipSplit = computed(() => 
+        //@ts-ignore
             hasError.value ? 0 : (totalBill.value * (selectedPercent.value / 100) / numSplit.value)
          );
+         //@ts-ignore
         const totalSplit = computed(() => hasError.value ? 0 : (totalBill.value * (1 + selectedPercent.value / 100)) / numSplit.value);
         const resetStore = () => {
             if(!hasError.value){
