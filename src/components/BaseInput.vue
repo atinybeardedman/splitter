@@ -7,9 +7,7 @@
         outline="~ none"
         cursor="pointer"
         py="1"
-        :id="id"
-        :placeholder="placeholder"
-        :type="type"
+        v-bind="$attrs"
         :value="modelValue"
         @input="updateInput"
     />
@@ -20,18 +18,6 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'BaseInput',
     props: {
-        id: {
-            type: String,
-            default: ''
-        },
-        type: {
-            type: String,
-            default: 'text'
-        },
-        placeholder: {
-            type: String,
-            default: ''
-        },
         modelValue: {
             type: [String, Number],
             default: ''

@@ -5,6 +5,8 @@
                 v-model.number="totalBill"
                 placeholder="0"
                 type="number"
+                step="0.01"
+                min="0"
                 id="bill"
                 p="y-2 x-4"
                 font="700"
@@ -28,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive } from 'vue';
+import { defineComponent, reactive } from 'vue';
 import useStore from '../composition/useStore';
 import BaseInput from "./BaseInput.vue";
 import FormField from "./FormField.vue";
