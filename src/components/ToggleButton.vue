@@ -1,7 +1,7 @@
 <template>
     <base-button
         font="700"
-        m="1 sm:1.5"
+        m="1 sm:y-1.5"
         py="1"
         w="md:7.5rem 8.5rem"
         transition="colors"
