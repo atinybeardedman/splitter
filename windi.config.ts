@@ -4,6 +4,7 @@ export default {
         colors: {
             primary: 'hsl(172, 67%, 45%)',
             accent: 'hsl(174, 53%, 78%)',
+            warning: 'hsl(17, 71%, 73%)',
             'dark-cyan': 'hsl(183, 100%, 15%)',
             'gray-cyan-500': 'hsl(186, 14%, 43%)',
             'gray-cyan-400': 'hsl(184, 14%, 56%)',

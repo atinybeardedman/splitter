@@ -3,6 +3,9 @@
         w="full"
         bg="gray-cyan-100"
         text="right dark-cyan"
+        border="~ rounded-md 1px solid primary opacity-0"
+        outline="~ none"
+        cursor="pointer"
         py="1"
         :id="id"
         :placeholder="placeholder"
@@ -32,12 +35,19 @@ export default defineComponent({
         modelValue: {
             type: [String, Number],
             default: ''
+        },
+        validationFn: {
+            type: Function,
+            default: (val: string | number): string => ''
         }
     },
     methods: {
         updateInput(event: Event): void {
-            this.$emit('update:modelValue', (<HTMLInputElement>event.target).value);
-        }
-    }
+            const value = (<HTMLInputElement>event.target).value;
+            this.$emit('update:modelValue', value);
+            this.$emit('validation', this.validationFn(value));
+            }
+    },
+    emits: ['update:modelValue','validation']
 });
 </script>

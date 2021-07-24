@@ -1,5 +1,9 @@
 <template>
-    <button  @click="$emit('click', $event)">
+    <button
+        outline="none active:none hover:none focus:none focus-visible:black"
+        border="none rounded-md"
+        @click="$emit('click', $event)"
+    >
         <slot></slot>
     </button>
 </template>

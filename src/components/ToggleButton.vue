@@ -1,13 +1,11 @@
 <template>
     <base-button
         font="700"
-        border="~ 0px rounded-md"
-        outline="none active:none"
-        my="1.5"
+        m="1 sm:y-1.5"
         py="1"
-        w="md:7.5rem 9rem"
+        w="md:7.5rem 8.5rem"
         transition="colors"
-        sm="hover:bg-accent hover:text-dark-cyan"
+        md="hover:bg-accent hover:text-dark-cyan"
         :text="isToggled ? 'dark-cyan' : 'white'"
         :bg="isToggled ? 'primary' : 'dark-cyan'"
     >
